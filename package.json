@@ -1,0 +1,32 @@
+{
+  "name": "type-switch-default",
+  "version": "1.0.0",
+  "description": "A default theme for the signal engine type-switch",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ava",
+    "build": "browserify main.js > dist.js",
+    "compile-sass": "sass ./styles.scss styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DerHowie/type-switch-default.git"
+  },
+  "keywords": [
+    "keypress",
+    "EventEmitter",
+    "typing game"
+  ],
+  "author": "Christopher Howard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DerHowie/type-switch-default/issues"
+  },
+  "homepage": "https://github.com/DerHowie/type-switch-default#readme",
+  "devDependencies": {
+    "browserify": "^13.1.0"
+  },
+  "dependencies": {
+    "type-switch": "0.0.9"
+  }
+}
