@@ -169,7 +169,7 @@ $(document).ready(function () {
           $prompt.fadeIn(2000);
           $message.css('animation', 'none').fadeOut(1000);
           shiftPrompt();
-          verticalSlide($underScore, '-60px');
+          verticalSlide($underScore, '20px');
           $(this).css('opacity', .2);
       });
 

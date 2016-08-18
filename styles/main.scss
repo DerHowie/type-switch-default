@@ -5,9 +5,9 @@ $white: #FFFFFF;
 $seaFoam: #00ceed;
 
 @keyframes Pulse {
-  0% {opacity: .4}
+  0% {opacity: .5}
   50% {opacity: .6}
-  100% {opacity: .8}
+  100% {opacity: .7}
 }
 
 body {
@@ -31,12 +31,14 @@ h2 {
 }
 
 #gameContainer {
-  height: 700px;
-  max-width: 100%;
-  position: relative;
+  height: 100%;
+  width: 100%;
+  position: absolute;
   overflow-x: hidden;
   overflow-y: hidden;
   z-index: -1;
+  top: 0;
+  bottom: 0;
 }
 
 #message {
@@ -79,7 +81,7 @@ h2 {
   transform: translateX(50%);
   color: $seaFoam;
   opacity: .8;
-  bottom: -130px;
+  bottom: -50px;
 }
 
 .done {
@@ -98,7 +100,7 @@ h2 {
   background-color: $white;
   width: 100%;
   height: 60px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 
@@ -138,17 +140,6 @@ h2 {
   top: 25px
 }
 
-#sheath {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $gray;
-  z-index: -1;
-  opacity: .4;
-}
-
 #particles {
   position: absolute;
   top:0;
@@ -160,7 +151,6 @@ h2 {
 }
 
 canvas{
-  background-color: $gray;
 	display: block;
 	vertical-align: bottom;
 }
