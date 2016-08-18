@@ -1,7 +1,6 @@
 $(document).ready(function () {
       var TypeSwitch = require('type-switch');
       var functions = require('./functions.js');
-      console.log(functions);
       var $gameContainer = $('#gameContainer');
       var $message = $('#message');
       var $prompt = $('#prompt');
@@ -71,7 +70,6 @@ $(document).ready(function () {
       }
 
       function ThreeScene() {
-        var self = this;
         this.container = document.getElementById('particles');
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 5000);
         this.scene = new THREE.Scene();
@@ -85,20 +83,20 @@ $(document).ready(function () {
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         this.container.appendChild(this.renderer.domElement);
 
-        window.addEventListener('resize', this.onWindowResize, false);
-
-        this.onWindowResize = function () {
-          this.windowHalfX = window.innerWidth / 2;
-          this.windowHalfY = window.innerHeight / 2;
-          self.camera.aspect = window.innerWidth / window.innerHeight;
-          this.camera.updateProjectionMatrix();
-          this.renderer.setSize(window.innerWidth, window.innerHeight);
-        }
+        window.addEventListener('resize', this.onWindowResize.bind(this), false);
 
         this.render = function () {
           TWEEN.update();
           this.renderer.render(this.scene, this.camera);
         };
+      }
+
+      ThreeScene.prototype.onWindowResize = function () {
+        this.windowHalfX = window.innerWidth / 2;
+        this.windowHalfY = window.innerHeight / 2;
+        this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.camera.updateProjectionMatrix();
       }
 
       ThreeScene.prototype.animate = function () {
@@ -155,7 +153,7 @@ $(document).ready(function () {
         var $done = $('.done');
         var $active = $('.active');
         $done.each(function () {
-          totalOffset += $(this).width() - 1;
+          totalOffset += $(this).width();
         });
         totalOffset += $active.width() / 2;
         $prompt.css('transform', 'translateX(-' + totalOffset + 'px)');

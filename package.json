@@ -6,7 +6,7 @@
   "scripts": {
     "test": "xo && ava",
     "build": "browserify main.js > dist.js",
-    "compile-sass": "sass ./styles.scss styles.css"
+    "compile-sass": "sass styles.scss styles.css"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,6 @@
     "browserify": "^13.1.0"
   },
   "dependencies": {
-    "type-switch": "0.0.9"
+    "type-switch": "^1.0.0"
   }
 }
