@@ -51,7 +51,7 @@ h2 {
 #prompt {
   position: absolute;
   left: 50%;
-  top: 0;
+  top: 50%;
   display: none; }
 
 .letter {

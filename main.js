@@ -156,7 +156,7 @@ $(document).ready(function () {
           totalOffset += $(this).width();
         });
         totalOffset += $active.width() / 2;
-        $prompt.css('transform', 'translateX(-' + totalOffset + 'px)');
+        $prompt.css('transform', 'translateX(-' + totalOffset + 'px) translateY(-50%)');
       }
 
       $('#playButton').on('click', function () {
